@@ -80,7 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
               ),
-              Container(
+              SizedBox(
                 height: SizeConfig().heightSize(context, 15.0),
                 width: SizeConfig().heightSize(context, 90),
                 child: TextField(
@@ -95,7 +95,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   controller: _textController,
                 ),
               ),
-              Container(
+              SizedBox(
                 height: SizeConfig().heightSize(context, 15.0),
                 width: SizeConfig().heightSize(context, 90),
                 child: TextField(
