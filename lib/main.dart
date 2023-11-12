@@ -30,15 +30,7 @@ class _MyHomePageState extends State<MyHomePage> {
   final _textController = TextEditingController();
   final _dateController = TextEditingController();
   String nameOfUser = " ";
-  DateTime? dateOfUser;
-  void _showDatePicker() {
-    showDatePicker(
-        context: context,
-        initialDate: DateTime.now(),
-        firstDate: DateTime(1900),
-        lastDate: DateTime.now());
-  }
-
+  DateTime dateOfUser = DateTime.now();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -113,6 +105,8 @@ class _MyHomePageState extends State<MyHomePage> {
               FilledButton.tonal(
                   onPressed: () {
                     nameOfUser = _textController.text;
+                    dateOfUser = DateTime.parse(_dateController.text);
+                    print(dateOfUser);
                     Navigator.of(context).push(MaterialPageRoute(
                         builder: (context) => BirthdayPage(
                               nameOfUser: nameOfUser,

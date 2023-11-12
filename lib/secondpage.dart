@@ -2,14 +2,33 @@ import 'package:flutter/material.dart';
 
 class BirthdayPage extends StatelessWidget {
   final String nameOfUser;
-  final DateTime? dateOfUser;
+  final DateTime dateOfUser;
 
-  const BirthdayPage({
+  BirthdayPage({
     required this.nameOfUser,
     required this.dateOfUser,
   });
+
+  String calculateAge() {
+    DateTime now = DateTime.now();
+    int years = now.year - dateOfUser.year;
+    int months = now.month - dateOfUser.month;
+
+    if (now.day < dateOfUser.day) {
+      months--;
+    }
+
+    if (months < 0) {
+      years--;
+      months += 12;
+    }
+
+    return '$years years and $months months old';
+  }
+
   @override
   Widget build(BuildContext context) {
+    String age = calculateAge();
     return Scaffold(
       appBar: AppBar(
         title: Text('Birthday'),
@@ -35,7 +54,7 @@ class BirthdayPage extends StatelessWidget {
               height: MediaQuery.of(context).size.height * 0.65,
               child: Center(
                 child: Text(
-                  'Hey $nameOfUser You are this old.',
+                  'Hey $nameOfUser You are $age',
                   style: const TextStyle(
                     fontSize: 40,
                     color: Colors.white,
