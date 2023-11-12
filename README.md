@@ -1,1 +1,3 @@
-# bday-flutter
+# birthdayapp
+
+A new Flutter project.
