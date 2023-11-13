@@ -91,6 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 height: SizeConfig().heightSize(context, 15.0),
                 width: SizeConfig().heightSize(context, 90),
                 child: TextField(
+                  readOnly: true,
                   controller: _dateController,
                   decoration: InputDecoration(
                     labelText: "Date of Birth",
